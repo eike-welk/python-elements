@@ -1,0 +1,16 @@
+Source: python-elements
+Section: python
+Priority: optional
+Maintainer: Debian OLPC <debian-olpc-devel@lists.alioth.debian.org>
+Uploaders: Luke Faraone <luke@faraone.cc>, Jonas Smedegaard <dr@jones.dk>
+DM-Upload-Allowed: yes
+Build-Depends: @cdbs@
+Standards-Version: 3.9.0
+Homepage: http://elements.linuxuser.at/
+
+Package: python-elements
+Architecture: any
+Depends: ${python:Depends}, ${misc:Depends}
+Provides: ${python:Provides}
+Description: You can tell I lack creativity. 
+ What sort of a long description is this?

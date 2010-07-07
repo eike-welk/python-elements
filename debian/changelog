@@ -1,0 +1,5 @@
+python-elements (0.13+svn20090823.230+dfsg-1) unstable; urgency=low
+
+  * Initial release. Closes: 588105.
+
+ -- Luke Faraone <luke@faraone.cc>  Sun, 04 Jul 2010 15:01:24 -0700

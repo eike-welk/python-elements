@@ -1,0 +1,37 @@
+#!/usr/bin/make -f
+
+DEB_BUILDDIR = build
+DEB_PYTHON_SYSTEM = pysupport
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/python-distutils.mk
+include /usr/share/cdbs/1/rules/utils.mk
+
+# Path to the debian directory
+DEBIAN_DIR := $(shell echo ${MAKEFILE_LIST} | awk '{print $$1}' | xargs dirname )
+UPSTREAM_VERSION ?=$(shell uscan --dehs | sed -n 's/.*<upstream-version>\(.*\)<\/upstream-version>.*/\1/p')
+
+CURRENT_TREEISH =$(shell dpkg-parsechangelog | sed -rne 's,^Version: .*svn.{9}([^-]+)\+dfsg.*,\1,p')
+CURVER=$(shell dpkg-parsechangelog | sed -rne 's,^Version: ([^-]+).*,\1,p')
+
+PACKAGE := $(shell dpkg-parsechangelog | sed -n 's/^Source: //p')
+SOURCE_DIR=$(PACKAGE)-$(CURVER)
+TARBALL=$(PACKAGE)_$(CURVER).orig.tar.gz
+
+$(SOURCE_DIR):
+	svn co http://svn2.assembla.com/svn/elements $(SOURCE_DIR).temp
+
+	cd $(SOURCE_DIR).temp && svn export -r ${CURRENT_TREEISH} . ../$(SOURCE_DIR)
+
+dfsg-clean: $(SOURCE_DIR)
+	# contrib: Binaries, duplicate unused code from other projects
+	rm -r $(SOURCE_DIR)/contrib
+	# misc: Libraries, spreadsheets, speed tests, oh my!
+	# ...   adds nothing to the project, contains embedded libs.
+	rm -r $(SOURCE_DIR)/misc
+
+$(TARBALL): dfsg-clean
+	tar czvf $(TARBALL) $(SOURCE_DIR)
+
+get-orig-source: $(TARBALL)
+	rm -rf $(SOURCE_DIR) $(SOURCE_DIR).temp
+

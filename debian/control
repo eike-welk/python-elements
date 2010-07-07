@@ -1,0 +1,41 @@
+Source: python-box2d
+Section: python
+Priority: optional
+Maintainer: Debian OLPC <debian-olpc-devel@lists.alioth.debian.org>
+Uploaders: Luke Faraone <luke@faraone.cc>, Jonas Smedegaard <dr@jones.dk>
+DM-Upload-Allowed: yes
+Build-Depends: debhelper (>= 7.0.1),
+ python-support,
+ python-all-dev,
+ devscripts (>= 2.10.7~),
+ cdbs (>= 0.4.67~),
+ dh-buildinfo, swig
+Standards-Version: 3.9.0
+Homepage: http://sugarlabs.org/
+
+Package: python-box2d
+Architecture: any
+Depends: ${python:Depends}, ${misc:Depends}, ${shlibs:Depends}
+Provides: ${python:Provides}
+Description: Python Bindings for the 2D Physics Engine Box2D
+ 2D rigid body simulation library for games. Programmers can use it in their 
+ games to make objects move in believable ways and make the world seem more 
+ interactive. From the game's point of view a physics engine is just a system 
+ for procedural animation. Rather than paying (or begging) an animator to move 
+ your actors around, you can let Sir Isaac Newton do the directing.
+ . 
+ This package contains the Python bindings for Box2D.
+
+Package: python-box2d-doc
+Section: doc
+Architecture: all
+Depends: python-box2d, python-pygame, ${misc:Depends}
+Description: Python Bindings for the 2D Physics Engine Box2D - documentation
+ 2D rigid body simulation library for games. Programmers can use it in their 
+ games to make objects move in believable ways and make the world seem more 
+ interactive. From the game's point of view a physics engine is just a system 
+ for procedural animation. Rather than paying (or begging) an animator to move 
+ your actors around, you can let Sir Isaac Newton do the directing.
+ . 
+ This package contains documentation and example files for the Python bindings 
+ for Box2D.

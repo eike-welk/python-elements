@@ -1,0 +1,10 @@
+Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=135
+Name: python-elements
+Maintainer: Luke Faraone <luke@faraone.cc>
+Source: http://elements.linuxuser.at/
+
+Copyright: © 
+
+Files: ./debian/*
+Copyright: © 2010 Luke Faraone <luke@faraone.cc>
+License: zlib/libpng or LGPL-2.1 or MIT/X11 (BSD like)
