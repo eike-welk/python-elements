@@ -1,0 +1,10 @@
+Introduction
+============
+
+For windows users, simply run:
+ setup.py install
+
+For OS X and Linux users, run:
+ sudo setup.py install
+
+Then be sure to check out the demos (in ./demos ).

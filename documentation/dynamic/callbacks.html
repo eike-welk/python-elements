@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>elements reference index</title>
+
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <link type="text/css" rel="stylesheet" href="index.css" />    
+        <script type="text/javascript" src="js.js"></script>
+    </head>
+    <body>
+    	<table width="100%" cellspacing="0" cellpadding="0" border="0" style="border: 3px solid black;">
+            <tr>         
+                <td valign="center" width="230" bgcolor="#ffffff" align="center" style="padding: 6px;">
+                    <img src="logo_small.png"><br>
+                    elements documentation (r105) 
+                </td>
+                <td valign="center" bgcolor="#6aee28" align="center" style="border-left: 3px solid black; padding: 6px;">
+                    <a href="ref.html">Reference Index</a> || <a href="index.html">Help Contents</a> || <a href="manual.html">Manual</a><br>
+                    <br>
+                    <a href="elements.html">elements</a> || <a href="add.html">elements.add</a> || <a href="callbacks.html">elements.callbacks</a> || <a href="box2d/classb2_world.htm" target="_blank">elements.world</a> || <a href="box2d/hierarchy.htm" target="_blank">Box2D</a>
+                </td>    
+            </tr>  
+    	</table>
+    	
+    	<br><br>
+
+
+ <a name="elements.callbacks"></a>
+ <big><b>elements.callbacks</big></b><br>
+ <ul>
+ <i>elements callback subclass</i><br>
+     <ul>
+        <li><a href="callbacks.html#elements.callbacks.add">elements.callbacks.add</a> - <font size="-1">add a new callback</font></li>
+        <li><a href="callbacks.html#elements.callbacks.get">elements.callbacks.get</a> - <font size="-1">get a list of callbacks</font></li>
+    </ul>
+    <br>The subclass takes care of registering and delivering callbacks.<br>
+    
+
+        <br>
+        [[comment elements.callbacks]]
+        <br>            
+
+    <br>
+    
+    <a name="elements.callbacks.add"></a>
+    <big><b>elements.callbacks.add</b></big>
+  
+        <ul><i>add a new callback</i><br>
+            <tt>elements.callbacks.add(callback_type, callback_handler, bodylist=None): return int</tt><br>
+            <br>
+    Users can add callbacks for certain (or all) collisions<br>
+     <br>
+    Parameters:<br>
+      callback_type ......... see elements.locals and <a href="manual.html#callbacks">manual.html#callbacks</a><br>
+      callback_handler ...... a function which should be executed on the specified event<br>
+      shapelist (optional) .. which shapes should cause the callback -- leave empty for all<br>
+<br>     
+    Return:<br>
+      callback_id ... used to remove a callback later (int)
+            
+
+        <br>
+        <br>            
+        [[comment elements.callbacks.add]]
+        </ul>  
+    
+    <br><br>
+    
+    <a name="elements.callbacks.get"></a>
+    <big><b>elements.callbacks.get</b></big>
+  
+        <ul><i>get a callback listing</i><br>
+            <tt>elements.callbacks.get(callback_type): return List</tt><br>
+            <br>
+    Users can get callback listing<br>
+     <br>
+    Parameters:<br>
+      callback_type ......... see elements.locals and <a href="manual.html#callbacks">manual.html#callbacks</a>         
+
+        <br>
+        <br>            
+        [[comment elements.callbacks.get]]
+        </ul>          
+        <br><br>
+                
+  </ul>    
+    
+    </body>
+</body>
+

@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <title>elements reference index</title>
+
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <link type="text/css" rel="stylesheet" href="index.css" />    
+        <script type="text/javascript" src="js.js"></script>
+    </head>
+    <body>
+    	<table width="100%" cellspacing="0" cellpadding="0" border="0" style="border: 3px solid black;">
+            <tr>         
+                <td valign="center" width="230" bgcolor="#ffffff" align="center" style="padding: 6px;">
+                    <img src="logo_small.png"><br>
+                    elements documentation (r105) 
+                </td>
+                <td valign="center" bgcolor="#6aee28" align="center" style="border-left: 3px solid black; padding: 6px;">
+                    <a href="ref.html">Reference Index</a> || <a href="index.html">Help Contents</a> || <a href="manual.html">Manual</a><br>
+                    <br>
+                    <a href="elements.html">elements</a> || <a href="add.html">elements.add</a> || <a href="callbacks.html">elements.callbacks</a> || <a href="box2d/classb2_world.htm" target="_blank">elements.world</a> || <a href="box2d/hierarchy.htm" target="_blank">Box2D</a>
+                </td>    
+            </tr>  
+    	</table>
+    	
+    	<br><br>
+
+
+ <a name="elements.add"></a>
+ <big><b>elements.add</big></b><br>
+ <ul>
+ <i>elements subclass for adding bodies to the world</i><br>
+    <ul>
+        <li><a href="add.html#elements.add.ball">elements.add.ball</a> - <font size="-1">add a circle shaped body</font></li>
+        <li><a href="add.html#elements.add.complexPoly">elements.add.complexPoly</a> - <font size="-1">add a convex polygon</font></li>
+        <li><a href="add.html#elements.add.concavePoly">elements.add.concavePoly</a> - <font size="-1">add a concave polygon</font></li>
+        <li><a href="add.html#elements.add.poly">elements.add.poly</a> - <font size="-1">add a already simplified polygon</font></li>
+        <li><a href="add.html#elements.add.rect">elements.add.rect</a> - <font size="-1">add a rectangle body</font></li>
+        <li><a href="add.html#elements.add.triangle">elements.add.triangle</a> - <font size="-1">add a triangle body</font></li>
+    </ul>
+
+    <br>The subclass can add a variety of bodies to the physic world. The lengths and positions the user supplies as parameters
+    can either be meters or pixels, according to what you have set with <a href="elements.html#elements.set_inputUnit">elements.set_inputUnit</a>.
+    By default, the input is set to pixels, and box2d will crash if you supply them in the wrong unit.<br>
+
+    <br>            
+    [[comment elements.add]]
+
+    <br>
+    <br>
+    
+    <a name="elements.add.ball"></a>
+    <big><b>elements.add.ball</b></big>
+  
+        <ul><i>add a circle shaped body</i><br>
+            <tt>elements.add.ball(pos, radius, dynamic=True, density=1.0, restitution=0.16, friction=0.5)): return box2d.b2Body</tt><br>
+            <br>
+            Add a dynamic ball at pos after correcting the positions and legths to the internal meter system if neccessary 
+            (if INPUT_PIXELS).<br>
+ <br>
+Parameters:
+  <i>pos (x, y)</i> is the center of the circle, <i>radius</i> in either pixels or meters, according to the input unit system.
+  See <a href="elements.html#elements.set_inputUnit">elements.set_inputUnit</a>. The other, optional parameters set the physical
+  behaviour and can be looked up <a href="">here</a>.
+
+        <br>
+        <br>            
+        [[comment elements.add.ball]]
+
+        </ul>  
+
+            
+    <br><br>
+    
+    <a name="elements.add.complexPoly "></a>
+    <big><b>elements.add.complexPoly </b></big>
+  
+        <ul><i>make a reduced, convex polygon of the vertices and add as body with one shape.</i><br>
+            <tt>elements.add.complexPoly(vertices, dynamic=True, density=1.0, restitution=0.16, friction=0.5): return box2d.b2Body</tt><br>
+            <br>
+            Parameters: <i>vertices</i> is a list with vertices of the polygon. This list will be reduced, a convex hull created and the
+            body with one shape added to the world. The max. number of vertices after reducing is set in box2d/Source/Common/b2Settings.h
+
+        <br>
+        <br>            
+        [[comment elements.add.complexPoly]]
+
+        </ul>  
+        
+    <br><br>
+    
+    <a name="elements.add.concavePoly"></a>
+    <big><b>elements.add.concavePoly</b></big>
+  
+        <ul><i>make a reduced, concave polygon out of the vertices</i><br>
+            <tt>elements.add.concavePoly(vertices, dynamic=True, density=1.0, restitution=0.16, friction=0.5): return ?</tt><br>
+            <br>
+            Parameters: <i>vertices</i> is a list of points for the polygon. The algorithm will detect lines and add
+            as many rectangles as needed to one body for the specified polygon vertices.
+
+        <br>
+        <br>            
+        [[comment elements.add.concavePoly]]
+        </ul>  
+            <br><br>
+    
+    <a name="elements.add.poly"></a>
+    <big><b>elements.add.poly</b></big>
+  
+        <ul><i>add a already centered, reduced and convex polygon</i><br>
+            <tt>elements.add.poly(pos, vertices, dynamic=True, density=1.0, restitution=0.16, friction=0.5): return box2d.b2Body</tt><br>
+            <br>
+            Parameters: <i>pos (x,y)</i> is the center of the polygon on the screen, either in pixels or meters (elements.set_inputUnit).
+            the <i>vertices</i> have to be a convex hull with max box2d.b2_maxPolygonVertices vertices (8 by default).
+
+        <br>
+        <br>            
+        [[comment elements.add.poly]]
+        </ul>  
+            <br><br>
+    
+    <a name="elements.add.rect"></a>
+    <big><b>elements.add.rect</b></big>
+  
+        <ul><i>add a rectangle to the world</i><br>
+            <tt>elements.add.rect(pos, width, height, dynamic=True, density=1.0, restitution=0.16, friction=0.5): return box2d.b2Body</tt><br>
+            <br>
+            Parameter units according to the input system specified with elements.set_inputUnit (pixels or meters).
+            <i>pos (x,y)</i> is the center of the rectangle.
+
+        <br>
+        <br>            
+        [[comment elements.add.rect]]
+        </ul>  
+                  <br><br>
+    
+    <a name="elements.add.triangle"></a>
+    <big><b>elements.add.triangle</b></big>
+  
+        <ul><i>add a triangle to the world</i><br>
+            <tt>elements.add.triangle(pos, sidelength, dynamic=True, density=1.0, restitution=0.16, friction=0.5): return box2d.b2Body</tt><br>
+            <br>
+            Parameters: <i>pos (x,y)</i> is the center of the triangle.
+
+        <br>
+        <br>            
+        [[comment elements.add.triangle]]
+        </ul>  
+                  <br><br>
+    
+
+                
+  </ul>    
+    
+    </body>
+</body>
+

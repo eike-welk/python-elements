@@ -1,0 +1,56 @@
+body { 
+    color:black;
+}
+a {
+    color:#331111;
+}
+
+ul.ul1 {
+    margin-left:20px;
+}
+tt { font-size:14px;
+}
+
+li {
+    margin:4px 0px 4px 0px;
+}
+
+form {
+    margin:0px;
+}
+input.i1 { color: #000000; background-color: #c4cee8; font-family: Arial, Helvetica, sans-serif; font-size: 12px; border: 1px solid #000000; font-weight: bold;}
+input.i1:hover { color: #000000; background-color: #e6ecfb; font-family: Arial, Helvetica, sans-serif; font-size: 12px; border: 1px solid #000000; font-weight: bold;}
+
+
+.addcomment {
+	margin: 0px;
+	padding: 0px;
+	}
+
+.comments { 
+	border: 1px solid black; 
+	background: #fef790;
+	padding: 4px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	}
+	
+textarea {
+	margin-bottom: 12px;
+	}
+	
+.comments th {
+	background: #fde42d;
+	}
+	
+.comments td {
+	background: #fef790;
+	}
+	
+.comments pre {
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px;
+	}
+	
+	6aee28

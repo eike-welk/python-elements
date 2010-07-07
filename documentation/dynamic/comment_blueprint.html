@@ -1,0 +1,17 @@
+<input id='##name##-comment' class='i1' type='button' value='Comments (##count##)' onclick='comments_show("##name##");'>
+<div id='##name##-content' style='display:none;'>
+    <form action='http://elements.linuxuser.at/ref/comment'>
+        <input type='hidden' name='action' value='add_comment'>
+        <input type='hidden' name='t' value='##name##'>
+        <input type='submit' class='i1' value='Add a Comment'>
+    </form>
+    <table class='comments'>
+        ##comments##
+    </table>
+    <form action='http://elements.linuxuser.at/ref/comment'>
+        <input type='hidden' name='action' value='add_comment'>
+        <input type='hidden' name='t' value='##name##'>
+        <input type='submit' class='i1' value='Add a Comment'>
+    </form>
+</div>        
+<br>

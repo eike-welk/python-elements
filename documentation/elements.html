@@ -1,0 +1,222 @@
+<html>
+    <head>
+        <title>elements reference index</title>
+
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <link type="text/css" rel="stylesheet" href="index.css" />    
+        <script type="text/javascript" src="js.js"></script>
+    </head>
+    <body>
+    	<table width="100%" cellspacing="0" cellpadding="0" border="0" style="border: 3px solid black;">
+            <tr>         
+                <td valign="center" width="230" bgcolor="#ffffff" align="center" style="padding: 6px;">
+                    <img src="logo_small.png"><br>
+                    elements documentation (r105) 
+                </td>
+                <td valign="center" align="center" style="border-left: 3px solid black; padding: 6px;">
+                    <a href="ref.html">Reference Index</a> || <a href="index.html">Help Contents</a> || <a href="manual.html">Manual</a><br>
+                    <br>
+                    <a href="elements.html">elements</a> || <a href="add.html">elements.add</a> || <a href="callbacks.html">elements.callbacks</a> || <a href="box2d/classb2_world.htm" target="_blank">elements.world</a> || <a href="box2d/hierarchy.htm" target="_blank">Box2D</a>
+                </td>    
+            </tr>  
+    	</table>
+    	
+    	<br><br>
+
+
+ <a name="elements"></a>
+ <big><b>elements</big></b><br>
+ <ul class='ul1'>
+ <i>elements main class</i><br>
+     <ul class='ul1'>
+        <li><a href="elements.html#elements.__init__">elements.__init__</a> - <font size="-1">constructor of the elements class</font></li>
+        <li><a href="elements.html#elements.draw">elements.draw</a> - <font size="-1">draw the scene with a specified method</font></li>
+        <li><a href="elements.html#elements.reset_color">elements.reset_color</a> - <font size="-1">new objects will be added with random colors</font></li>
+        <li><a href="elements.html#elements.set_color">elements.set_color</a> - <font size="-1">new objects will be added with specified color</font></li>
+        <li><a href="elements.html#elements.set_drawingMethod">elements.set_drawingMethod</a> - <font size="-1">set a drawing method (pygame, ...)</font></li>
+        <li><a href="elements.html#elements.set_inputAxisOrigin">elements.set_inputAxisOrigin</a> - <font size="-1">configure the input coordinate system</font></li>
+        <li><a href="elements.html#elements.set_inputUnit">elements.set_inputUnit</a> - <font size="-1">configure input unit system (pixels or meters)</font></li>
+        <li><a href="elements.html#elements.set_screenSize">elements.set_screenSize</a> - <font size="-1">set current screen size</font></li>
+        <li><a href="elements.html#elements.update">elements.update</a> - <font size="-1">update the physics space</font></li>
+    </ul>
+    <br>The class which handles all interaction with the box2d engine.<br>
+    <br>
+    As a convenience, most of the top-level variables in elements have been placed inside a module named 'elements.locals'. This is meant to be used with 'from elements.locals import *', in addition to 'import elements'.
+    
+    <br>
+    <br>            
+    <form action='http://elements.linuxuser.at/ref/comment'>
+    <input type='hidden' name='action' value='add_comment'>
+    <input type='hidden' name='t' value='elements'>
+    <input type='submit' class='i1' value='Add a Comment'>
+</form>
+
+    <br>
+    <br>
+    
+    <a name="elements.__init__"></a>
+    <big><b>elements.__init__</b></big>
+  
+        <ul class='ul1'><i>constructor of the elements class</i><br>
+            <tt>elements.__init__(screen_size, gravity=(0.0, -9.0), ppm=100.0)): return Elements()</tt><br>
+            <br>
+            Parameters: <i>screen_size .. (w, h)</i> is the screen size in pixels, <i>gravity .. (x, y)</i> in m/s^2  [float] and <i>ppm</i> .. pixels per meter [int]<br>
+            <br>
+            This function is called on a <i>world = Elements()</i><br>
+            <br>            
+            <form action='http://elements.linuxuser.at/ref/comment'>
+    <input type='hidden' name='action' value='add_comment'>
+    <input type='hidden' name='t' value='elements.__init__'>
+    <input type='submit' class='i1' value='Add a Comment'>
+</form>
+        </ul>  
+    <br><br>    
+    <a name="elements.draw"></a>
+    <big><b>elements.draw</b></big>
+  
+        <ul class='ul1'><i>draw the scene with a specified method</i><br>
+            <tt>elements.draw(surface): return None</tt><br>
+            <br>
+            If a drawing method is specified, this function passes the objects to the module in pixels.<br>
+            <br>    
+            Parameters: surface ... can be used for whatever the method needs for drawing
+            <br>
+            <br>            
+            <form action='http://elements.linuxuser.at/ref/comment'>
+    <input type='hidden' name='action' value='add_comment'>
+    <input type='hidden' name='t' value='elements.draw'>
+    <input type='submit' class='i1' value='Add a Comment'>
+</form>
+        </ul>          
+  
+       <br><br>    
+    <a name="elements.reset_color"></a>
+    <big><b>elements.reset_color</b></big>
+  
+        <ul class='ul1'><i>new objects will be added with random colors</i><br>
+            <tt>elements.reset_color(): return None</tt><br>
+            <br>
+            All objects from now on will be drawn in random colors
+            <br>
+            <br>            
+            <form action='http://elements.linuxuser.at/ref/comment'>
+    <input type='hidden' name='action' value='add_comment'>
+    <input type='hidden' name='t' value='elements.reset_color'>
+    <input type='submit' class='i1' value='Add a Comment'>
+</form>
+        </ul>  
+  
+       <br><br>    
+    <a name="elements.set_color"></a>
+    <big><b>elements.set_color</b></big>
+  
+        <ul class='ul1'><i>new objects will be added with specified color</i><br>
+            <tt>elements.set_color(clr): return None</tt><br>
+            <br>
+            <i>clr</i> can either be a hex color '#123123' or a rgb color ((0), (0), (0))
+            <br>
+            <br>            
+            <form action='http://elements.linuxuser.at/ref/comment'>
+    <input type='hidden' name='action' value='add_comment'>
+    <input type='hidden' name='t' value='elements.set_color'>
+    <input type='submit' class='i1' value='Add a Comment'>
+</form>
+        </ul>  
+  
+       <br><br>    
+    <a name="elements.set_drawingMethod"></a>
+    <big><b>elements.set_drawingMethod</b></big>
+  
+        <ul class='ul1'><i>set a drawing method (pygame, ...)</i><br>
+            <tt>elements.set_drawingMethod(m): return True / False</tt><br>
+            <br>
+            Returns True if method is found, False if not.<br>
+            <br>
+            The parameter m can be for now only 'pygame'.
+            <br>
+            <br>            
+            <form action='http://elements.linuxuser.at/ref/comment'>
+    <input type='hidden' name='action' value='add_comment'>
+    <input type='hidden' name='t' value='elements.set_drawingMethod'>
+    <input type='submit' class='i1' value='Add a Comment'>
+</form>
+        </ul>  
+  
+       <br><br>    
+    <a name="elements.set_inputAxisOrigin"></a>
+    <big><b>elements.set_inputAxisOrigin</b></big>
+  
+        <ul class='ul1'><i>configure the input coordinate system</i><br>
+            <tt>elements.set_inputAxisOrigin(left=True, top=False): return None</tt><br>
+            <br>
+            Change the origin of the input coordinate system axis<br>
+ <br>
+Parameters:<br>
+  left ... True or False -- x = 0 is at the left?<br>
+  top .... True or False -- y = 0 is at the top?
+            <br>
+            <br>            
+            <form action='http://elements.linuxuser.at/ref/comment'>
+    <input type='hidden' name='action' value='add_comment'>
+    <input type='hidden' name='t' value='elements.set_inputAxisOrigin'>
+    <input type='submit' class='i1' value='Add a Comment'>
+</form>
+        </ul>  
+  
+       <br><br>    
+    <a name="elements.set_inputUnit"></a>
+    <big><b>elements.set_inputUnit</b></big>
+  
+        <ul class='ul1'><i>configure input unit system (pixels or meters)</i><br>
+            <tt>elements.set_inputUnit(input): return None</tt><br>
+            <br>
+            The parameter input can be INPUT_PIXELS (1) or INPUT_METERS (0)
+            <br>
+            <br>            
+            <form action='http://elements.linuxuser.at/ref/comment'>
+    <input type='hidden' name='action' value='add_comment'>
+    <input type='hidden' name='t' value='elements.set_inputUnit'>
+    <input type='submit' class='i1' value='Add a Comment'>
+</form>
+        </ul>  
+  
+       <br><br>    
+    <a name="elements.set_screenSize"></a>
+    <big><b>elements.set_screenSize</b></big>
+  
+        <ul class='ul1'><i>set current screen size</i><br>
+            <tt>elements.set_screenSize(m): return None</tt><br>
+            <br>
+            The parameter size is ((width), (height)) in pixels
+            <br>
+            <br>            
+            <form action='http://elements.linuxuser.at/ref/comment'>
+    <input type='hidden' name='action' value='add_comment'>
+    <input type='hidden' name='t' value='elements.set_screenSize'>
+    <input type='submit' class='i1' value='Add a Comment'>
+</form>
+        </ul>  
+  
+       <br><br>    
+    <a name="elements.update"></a>
+    <big><b>elements.update</b></big>
+  
+        <ul class='ul1'><i>Update the physics, if not paused (self.run_physics)</i><br>
+            <tt>elements.update(fps=50.0, iterations=10): return None</tt><br>
+            <br>
+            The optional parameter <i>fps</i> specifies the frames per seconds the engine is supposoed to run, 
+            <i>iteration</i> is the number of substeps per step (for smoother simulations)
+            <br>
+            <br>            
+            <form action='http://elements.linuxuser.at/ref/comment'>
+    <input type='hidden' name='action' value='add_comment'>
+    <input type='hidden' name='t' value='elements.update'>
+    <input type='submit' class='i1' value='Add a Comment'>
+</form>
+        </ul>  
+        <br><br>
+                
+  </ul>    
+    
+    </body>
+</body>

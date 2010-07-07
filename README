@@ -1,0 +1,83 @@
+This file is part of the 'Elements' Project
+Elements is a 2D Physics API for Python (supporting Box2D2 (r148))
+
+Copyright (C) 2008, The Elements Team, <elements@linuxuser.at>
+ 
+Home:  http://elements.linuxuser.at
+ IRC:  #elements on irc.freenode.net
+
+Code:  svn co http://svn2.assembla.com/svn/elements          
+       http://www.assembla.com/wiki/show/elements                  
+
+License: Elements API: GPLv3
+         Examples: Public Domain -- No legal restrictions
+         
+         
+=================
+Table of Contents
+=================
+    1. About the 'Elements' Project
+    2. Requirements to use and build
+    3. References 
+    
+
+1. About the 'Elements' Project
+===============================
+Elements is:
+* An easy to use API for integrating 2D physics (with pybox2d) into own python ideas
+* User interfaces & simulations, as well as teaching & learning tools
+* Fast code
+
+The Elements Project previously supported the Chipmunk 2D physics engine,
+but due to the performance we decided to stick with Box2D exclusively. See:
+http://wiki.laptop.org/go/Physic_Engines/Speed_Tests
+
+
+Internal Coordinate Systems
+---------------------------
+
+     Elements          Box2D             Pyglet          Pygame
+      +y                +y                +y              +-----> +x
+      ^                 ^                 ^               |
+      |                 |                 |               |
+      |                 |                 |               V
+      +-----> +x        +-----> +x        +-----> +x      +y
+
+    It is possible to change the input coordinate system to any you wish, by default
+    it is set to pygames. This means, adding a circle at (0,0) will add it at the top left corner.
+    
+    To change that to any other orientations, you can use inputAxisOrigin(left, top)
+    > For pygame (default): inputAxisOrigin(left=True, top=True)
+
+
+Unit Systems
+------------
+
+    Elements can take either pixels or meters as input for lengths/positions/...
+    
+    By default it is set to pixels, for convenient use with pygame. Change to meters with:
+    > set_inputUnit(INPUT_METERS) and back with set_inputUnit(INPUT_PIXELS) 
+    
+    The output to the drawing methods is always done in pixels.
+    
+    
+2. Requirements
+===============
+2.1 Usage Requirements
+-----------------------
+- Python  http://www.python.org
+- pybox2d http://pybox2d.googlecode.com
+
+pybox2d will be automatically installed by setuptools when you run the installation.
+
+For the demos, these are required:
+- pygame  http://www.pygame.org
+
+
+3. References
+=============
+- http://wiki.laptop.org/go/Elements
+- Elements home  http://www.assembla.com/wiki/show/elements
+- Box2D forum    http://www.box2d.org/forum
+- Box2D wiki     http://www.box2d.org/wiki
+- pybox2d epydoc http://pybox2d.googlecode.com/svn/epydoc/html/index.html

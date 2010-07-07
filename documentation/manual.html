@@ -1,0 +1,205 @@
+False
+<html>
+    <head>
+        <title>elements reference index</title>
+
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <link type="text/css" rel="stylesheet" href="index.css" />    
+    </head>
+    <body>
+    	<table width="100%" cellspacing="0" cellpadding="0" border="0" style="border: 3px solid black;">
+            <tr>         
+                <td valign="center" width="230" bgcolor="#ffffff" align="center" style="padding: 6px;">
+                    <img src="logo_small.png"><br>
+                    elements documentation (r105) 
+                </td>
+                <td valign="center" align="center" style="border-left: 3px solid black; padding: 6px;">
+                    <a href="ref.html">Reference Index</a> || <a href="index.html">Help Contents</a> || <a href="/manual">Manual</a><br>
+                    <br>
+                    <a href="/ref/elements">elements</a> || <a href="/ref/add">elements.add</a> || <a href="/ref/callbacks">elements.callbacks</a> || <a href="box2d/classb2_world.htm" target="_blank">elements.world</a> || <a href="box2d/hierarchy.htm" target="_blank">Box2D</a>
+                </td>    
+            </tr>  
+    	</table>
+    	
+    	<br>
+    	<h3>Welcome to the Elements Manual</h2>
+    	<ul class='ul1'>
+        	This page will guide you along the first steps with Elements, you are heartly invited to
+        	visit our IRC channel <b>#elements on irc.freenode.net</b>. No matter which timezone, there are
+        	always friendly people around which are happy to
+        	help out and discuss issues and ideas :-)<br>
+        	<br>
+        	Let's begin with an overview of the important
+        	concepts.<br>
+
+    <br>            
+    <form action='http://elements.linuxuser.at/ref/comment'>
+    <input type='hidden' name='action' value='add_comment'>
+    <input type='hidden' name='t' value='manual'>
+    <input type='submit' class='i1' value='Add a Comment'>
+</form>
+    <br><br>
+    
+        <a name="drawing_methods"></a>
+            <h3>Drawing Methods</h3>
+            <ul class='ul1'>Elements can draw with different methods:
+                <ul class='ul1'>    
+                    <li><tt>cairo</tt></li>
+                    <li><tt>pygame</tt></li>
+                    <li><tt>opengl_pyglet</tt></li>
+                    <li><small>(more coming soon :)</small></li>
+                </ul>
+                <br>
+                Be default, it is set to pygame, and can be changed on initializing Elements:<br><br>
+                <ul class='ul1'>
+                    <tt>world = <a href="/ref/elements#elements.__init__">elements.Elements(screen_size=(600,600), renderer="cairo")</a></tt>
+                </ul>
+                <br>
+                If the drawing method needs a surface, it can be passed to the renderer with:<br>
+                <br>
+                <ul class='ul1'><tt><a href="/ref/elements#elements.set_surface">elements.set_surface(screen)</a></tt></ul>
+            <br>            
+            <form action='http://elements.linuxuser.at/ref/comment'>
+    <input type='hidden' name='action' value='add_comment'>
+    <input type='hidden' name='t' value='manual.drawing_methods'>
+    <input type='submit' class='i1' value='Add a Comment'>
+</form><br>
+            </ul>
+            
+        <a name="coordinate_systems"></a>
+        	<h3>Internal Coordinate Systems</h3>
+        	
+        	<ul class='ul1'>
+<pre>
+ Elements            Box2D             OpenGL            Cairo             Pygame
+  +y                  +y                +y                +-------> +x      +-------> +x
+  ^                   ^                 ^                 |                 |
+  |                   |                 |                 |                 |
+  |                   |                 |                 |                 |
+  |                   |                 |                 |                 |
+  +-------> +x        +-------> +x      +-------> +x      V +y              V +y
+</pre>
+    <br>            
+    <form action='http://elements.linuxuser.at/ref/comment'>
+    <input type='hidden' name='action' value='add_comment'>
+    <input type='hidden' name='t' value='manual.internal_coordinate_systems'>
+    <input type='submit' class='i1' value='Add a Comment'>
+</form>
+        	</ul>
+    
+        <br>
+        
+        <a name="input_coordinates"></a>
+        <h3>Input of Coordinates</h3>
+        <ul class='ul1'>Elements will translate all input parameters to it's internal coordinate system (also called <b>world coordinate system</b>).<br>
+        <br>
+        The input coordinate system (<b>screen coordinate system</b>) is by default set to pygames, 
+        which means that adding an object at (0,0) 
+        will let it appear in the upper left corner. You can change the origin of your system with:<br>
+        <br>
+        <ul class='ul1'><tt><a href="/ref/elements#elements.set_inputAxisOrigin">elements.set_inputAxisOrigin(left, top)</a></tt></ul>
+        
+        <br>For example if your game uses the same (screen) coordinate system as Elements, you need to set: <br>
+            <br><ul class='ul1'><tt>elements.set_inputAxisOrigin(left=True, top=False)</tt></ul>
+        <br>
+        <form action='http://elements.linuxuser.at/ref/comment'>
+    <input type='hidden' name='action' value='add_comment'>
+    <input type='hidden' name='t' value='manual.input_coordinates'>
+    <input type='submit' class='i1' value='Add a Comment'>
+</form>
+         </ul>
+         
+        <br>
+        
+        <a name="input_unit"></a>
+         <h3>Input Unit System (pixels or meters)</h3>
+        <ul class='ul1'>
+            Elements supports both, pixels and meters as input for lengths and positions. By default, the input units 
+            are recognized as pixels, and will be translated into meters by the given ppm value (see 
+            <a href="/ref/elements#elements.__init__">elements.__init__</a>).<br>
+            <br>
+            If you want to change the default input system (so you can supply the elements api
+            with parametersin meters rather than pixels), you can do so with<br>
+            <br><ul class='ul1'><tt><a href="/ref/elements#elements.set_inputUnit">elements.set_inputUnit(unit)</a></tt></ul>
+            <br>
+            Supported Unit Systems are:
+<pre>INPUT_METERS
+INPUT_PIXELS</pre>           
+
+        <br>            
+        <form action='http://elements.linuxuser.at/ref/comment'>
+    <input type='hidden' name='action' value='add_comment'>
+    <input type='hidden' name='t' value='manual.input_unit_system'>
+    <input type='submit' class='i1' value='Add a Comment'>
+</form>
+        </ul>
+        
+        <br>
+        
+        <a name="line_width"></a>
+        <h3>Line Width (Filled or border)</h3>
+        <ul class='ul1'>
+            You can set the border width of the objects to any pixel number,
+            or to 0 if you want to fill the shapes.
+            
+            world.line_width = 4
+
+        <br>
+        <br>            
+        <form action='http://elements.linuxuser.at/ref/comment'>
+    <input type='hidden' name='action' value='add_comment'>
+    <input type='hidden' name='t' value='manual.line_width'>
+    <input type='submit' class='i1' value='Add a Comment'>
+</form>
+        </ul>    
+
+
+        <br>
+        <a name="callbacks"></a>
+        <h3>Callbacks</h3>
+        <ul class='ul1'>
+            With callbacks, user can start own functions on specified events with <a href="/ref/callbacks#elements.callbacks.add">elements.callbacks.add</a>. Currently supported callback types are:
+<pre>CALLBACK_CONTACT_ADD
+CALLBACK_CONTACT_PERSIST
+CALLBACK_CONTACT_REMOVE</pre>            
+
+        <br>            
+        <form action='http://elements.linuxuser.at/ref/comment'>
+    <input type='hidden' name='action' value='add_comment'>
+    <input type='hidden' name='t' value='manual.callbacks'>
+    <input type='submit' class='i1' value='Add a Comment'>
+</form>
+        </ul>
+        
+        <br>
+        <a name="densities"></a>
+        <h3>List of Densities of Various Materials</h3>
+        <ul class='ul1'>
+<pre>Init: p = m / V  ([p] = kg / m³)
+
+Air            0.001225
+Liquid ammonia 0.682
+Oil            0.8
+Water          1.0
+Glycerine      1.26
+Concrete       2.4
+Aluminium      2.7
+Iron           7.87
+Copper         8.92
+Lead           11.35
+Mercury        13.6
+Gold           19.3
+Platinum       21.4
+Osmium         22 </pre>
+
+        <br>            
+        <form action='http://elements.linuxuser.at/ref/comment'>
+    <input type='hidden' name='action' value='add_comment'>
+    <input type='hidden' name='t' value='manual.densities'>
+    <input type='submit' class='i1' value='Add a Comment'>
+</form>
+           </ul>
+        	
+    	</ul>
+    </body>
+</html>
