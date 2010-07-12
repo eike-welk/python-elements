@@ -9,7 +9,7 @@ Build-Depends: debhelper (>= 7.0.1),
  python-all-dev,
  devscripts (>= 2.10.7~),
  cdbs (>= 0.4.67~),
- dh-buildinfo
+ dh-buildinfo python-setuptools
 Standards-Version: 3.9.0
 Homepage: http://elements.linuxuser.at/
 Vcs-Git: git://git.debian.org/collab-maint/python-elements.git
