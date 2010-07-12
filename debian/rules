@@ -10,7 +10,7 @@ include /usr/share/cdbs/1/rules/utils.mk
 CDBS_DEPENDS += python-pygame
 
 # setup.py uses setuptools.
-CDBS_BUILD_DEPENDS += python-setuptools
+CDBS_BUILD_DEPENDS += , python-setuptools
 
 # Path to the debian directory
 DEBIAN_DIR := $(shell echo ${MAKEFILE_LIST} | awk '{print $$1}' | xargs dirname )
