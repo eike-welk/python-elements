@@ -7,6 +7,8 @@ DM-Upload-Allowed: yes
 Build-Depends: @cdbs@
 Standards-Version: 3.9.0
 Homepage: http://elements.linuxuser.at/
+Vcs-Git: git://git.debian.org/collab-maint/python-elements.git
+Vcs-Browser: http://git.debian.org/?p=collab-maint/python-elements.git
 
 Package: python-elements
 Architecture: any
