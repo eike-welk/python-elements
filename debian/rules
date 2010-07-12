@@ -38,3 +38,5 @@ $(TARBALL): dfsg-clean
 get-orig-source: $(TARBALL)
 	rm -rf $(SOURCE_DIR) $(SOURCE_DIR).temp
 
+clean::
+	rm -rf *.egg-info build
