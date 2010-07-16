@@ -20,5 +20,7 @@ Package: python-elements
 Architecture: any
 Depends: ${python:Depends}, ${misc:Depends}
 Provides: ${python:Provides}
-Description: You can tell I lack creativity. 
- What sort of a long description is this?
+Description: A 2D Physics API for Python 
+ An easy to use API for integrating 2D physics (with pybox2d) into own
+ Python ideas, that includes user interfaces & simulations, as well as
+ teaching & learning tools. 
