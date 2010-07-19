@@ -12,6 +12,11 @@ CDBS_DEPENDS += python-pygame
 # setup.py uses setuptools.
 CDBS_BUILD_DEPENDS += , python-setuptools
 
+# Don't compress useful docs.
+DEB_COMPRESS_EXCLUDE = .py .wav
+
+
+## get-orig-source rule ##
 # Path to the debian directory
 DEBIAN_DIR := $(shell echo ${MAKEFILE_LIST} | awk '{print $$1}' | xargs dirname )
 UPSTREAM_VERSION ?=$(shell uscan --dehs | sed -n 's/.*<upstream-version>\(.*\)<\/upstream-version>.*/\1/p')
