@@ -6,7 +6,7 @@ Uploaders: Luke Faraone <luke@faraone.cc>, Jonas Smedegaard <dr@jones.dk>
 DM-Upload-Allowed: yes
 Build-Depends: debhelper (>= 7.0.1),
  python-support,
- python-dev (>= 2.3.5-7),
+ python,
  devscripts (>= 2.10.7~),
  cdbs (>= 0.4.67~),
  dh-buildinfo,
