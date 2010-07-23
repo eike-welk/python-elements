@@ -15,6 +15,9 @@ CDBS_BUILD_DEPENDS += , python-setuptools
 # Don't compress useful docs.
 DEB_COMPRESS_EXCLUDE = .py .wav
 
+# Suppress unneeded auto-resolved build-dependency on python-dev
+CDBS_BUILD_DEPENDS_class_python-distutils = python$(cdbs_python_nondefault_version)
+
 
 ## get-orig-source rule ##
 # Path to the debian directory
