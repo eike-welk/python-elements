@@ -18,7 +18,7 @@ Vcs-Browser: http://git.debian.org/?p=collab-maint/python-elements.git
 
 Package: python-elements
 Architecture: all 
-Depends: ${python:Depends}, ${misc:Depends}
+Depends: ${python:Depends}, ${misc:Depends}, python-box2d, python-pygame
 Provides: ${python:Provides}
 Description: A 2D Physics API for Python 
  An easy to use API for integrating 2D physics (with pybox2d) into own
