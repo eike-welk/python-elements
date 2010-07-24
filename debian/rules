@@ -6,9 +6,6 @@ include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/class/python-distutils.mk
 include /usr/share/cdbs/1/rules/utils.mk
 
-# Documentation requires pygame
-CDBS_DEPENDS += python-pygame
-
 # setup.py uses setuptools.
 CDBS_BUILD_DEPENDS += , python-setuptools
 
