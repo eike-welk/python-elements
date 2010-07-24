@@ -1,3 +1,9 @@
+python-elements (0.13+svn20090823.230+dfsg-2) unstable; urgency=low
+
+  * Include deps in control.in.
+
+ -- Luke Faraone <luke@faraone.cc>  Sat, 24 Jul 2010 12:27:46 -0400
+
 python-elements (0.13+svn20090823.230+dfsg-1) unstable; urgency=low
 
   * Initial release. Closes: 588105.
